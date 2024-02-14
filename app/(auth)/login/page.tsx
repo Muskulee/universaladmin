@@ -1,10 +1,21 @@
+"use client";
 import type { ReactElement } from "react";
 import Layout from "./layout";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
+
+  const handleLogin = () => {
+    console.log("handleLogin", "handleLogin");
+    router.push("/dashboard");
+  };
+
   return (
     <>
+      {/* <button onClick={}>Submit</button> */}
+
       <div className="flex flex-col md:flex-row gap-4">
         <Link
           href="#"
@@ -63,7 +74,7 @@ const Login = () => {
           </span>
         </div>
       </div>
-      <form action="">
+      <form onSubmit={handleLogin}>
         <div className="mb-4">
           <input
             type="text"
@@ -134,12 +145,13 @@ const Login = () => {
             </a>
           </div>
         </div>
-        <Link
-          href="/login"
+        <button
+          type="submit"
+          // href="/login"
           className="py-3.5 flex items-center justify-center text-white font-bold bg-success-300 hover:bg-success-400 transition-all rounded-lg w-full"
         >
           Sign In
-        </Link>
+        </button>
       </form>
       <p className="text-center text-bgray-900 dark:text-bgray-50 text-base font-medium pt-7">
         Don’t have an account?
