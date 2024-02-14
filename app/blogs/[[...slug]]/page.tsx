@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  // absolute: "Blog",
+};
+
 const blogs = ({ params }: { params: { slug: string[] } }) => {
   if (params.slug?.length === 2) {
     return (
