@@ -1,11 +1,12 @@
 import type { ReactElement } from "react";
 import Layout from "./layout";
+import Link from "next/link";
 
 const Login = () => {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-4">
-        <a
+        <Link
           href="#"
           className="inline-flex justify-center items-center gap-x-2 border border-bgray-300 dark:border-darkblack-400 rounded-lg px-6 py-4 text-base text-bgray-900 dark:text-white font-medium"
         >
@@ -34,7 +35,7 @@ const Login = () => {
             />
           </svg>
           <span> Sign In with Google </span>{" "}
-        </a>
+        </Link>
         <a
           href="#"
           className="inline-flex justify-center items-center gap-x-2 border border-bgray-300 dark:border-darkblack-400 rounded-lg px-6 py-4 text-base text-bgray-900 dark:text-white font-medium"
@@ -133,18 +134,18 @@ const Login = () => {
             </a>
           </div>
         </div>
-        <a
-          href="index.html"
+        <Link
+          href="/login"
           className="py-3.5 flex items-center justify-center text-white font-bold bg-success-300 hover:bg-success-400 transition-all rounded-lg w-full"
         >
           Sign In
-        </a>
+        </Link>
       </form>
       <p className="text-center text-bgray-900 dark:text-bgray-50 text-base font-medium pt-7">
         Don’t have an account?
-        <a href="signup.html" className="font-semibold underline">
+        <Link href="/register" className="font-semibold underline">
           Sign Up
-        </a>
+        </Link>
       </p>
       <nav className="flex items-center justify-center flex-wrap gap-x-11 pt-24">
         <a href="#" className="text-sm text-bgray-700 dark:text-white">

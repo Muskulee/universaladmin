@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React, { ReactNode } from "react";
 
 type LayoutProps = {
@@ -13,7 +14,7 @@ const LoginLayout = ({ children }: LayoutProps) => {
           {/* Left */}
           <div className="lg:w-1/2 px-5 xl:pl-12 pt-10">
             <header>
-              <a href="index.html" className="">
+              <Link href="/" className="">
                 <Image
                   src="/assets/images/logo/logo-color.svg"
                   className="block dark:hidden"
@@ -28,7 +29,7 @@ const LoginLayout = ({ children }: LayoutProps) => {
                   width={120} // Set the actual width here
                   height={40} // Set the actual height here
                 />
-              </a>
+              </Link>
             </header>
             <div className="max-w-[450px] m-auto pt-24 pb-16">
               <header className="text-center mb-8">
