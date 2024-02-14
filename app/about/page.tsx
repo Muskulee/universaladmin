@@ -1,5 +1,5 @@
-const dashboard = () => {
+const About = () => {
   return <h1>About</h1>;
 };
 
-export default dashboard;
+export default About;
