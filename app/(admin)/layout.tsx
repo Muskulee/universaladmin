@@ -1,7 +1,6 @@
 "use client";
 
 import React, { ReactNode, useState } from "react";
-import { Providers } from "../../providers";
 import { Button, ButtonGroup } from "@nextui-org/react";
 import {
   Navbar,
