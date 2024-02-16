@@ -4,7 +4,7 @@ import type { ReactElement } from "react";
 const Dashboard = () => {
   return (
     <>
-      <div className="flex"></div>
+      <div className="flex bg-dark dark"></div>
     </>
   );
 };

@@ -24,6 +24,7 @@ import {
   Avatar,
 } from "@nextui-org/react";
 import { AcmeLogo } from "./AcmeLogo.jsx";
+import { useSelector } from "react-redux";
 
 type LayoutProps = {
   children: ReactNode;
@@ -33,6 +34,18 @@ type LayoutProps = {
 
 const DashBoardLayout = ({ children }: LayoutProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { id, name, email } = useSelector(
+    (state: {
+      user: {
+        id: string;
+        name: string;
+        email: string;
+      };
+    }) => state.user
+  );
+
+  console.log("id", id, email);
 
   const [closedNav, setClosedNav] = useState(true);
 
