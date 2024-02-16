@@ -2,7 +2,11 @@ import Layout from "./../layout";
 import type { ReactElement } from "react";
 
 const Dashboard = () => {
-  return <></>;
+  return (
+    <>
+      <div className="flex"></div>
+    </>
+  );
 };
 
 Dashboard.getLayout = function getLayout(page: ReactElement) {
