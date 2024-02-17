@@ -56,7 +56,7 @@ export default function MyNavbar({ closed, setLogOut, logo }: Props) {
               href="/dashboard"
               startContent={<BiSolidDashboard size={24} />}
             >
-              Dashboard
+              Players Dashboard
             </ListboxItem>
 
             <ListboxItem

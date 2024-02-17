@@ -5,6 +5,7 @@ import { AiOutlineMenuFold, AiOutlineMenuUnfold } from "react-icons/ai";
 import { COLORS } from "./../_lib/colors";
 import MyNavbar from "./NavBar";
 import { SearchIcon } from "./SearchIcon";
+import { IoMdPersonAdd } from "react-icons/io";
 
 import { Button, ButtonGroup } from "@nextui-org/react";
 import {
@@ -44,8 +45,6 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
       };
     }) => state.user
   );
-
-  console.log("id", id, email);
 
   const [closedNav, setClosedNav] = useState(true);
 
@@ -107,24 +106,27 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
             </NavbarBrand> */}
             <NavbarContent className="hidden lg:flex flex-grow gap-4 ml-auto">
               <NavbarItem>
-                <Link color="foreground" href="#">
+                {/* <Link color="foreground" href="#">
                   Features
-                </Link>
+                </Link> */}
               </NavbarItem>
               <NavbarItem isActive>
-                <Link href="#" aria-current="page" color="secondary">
+                {/* <Link href="#" aria-current="page" color="secondary">
                   Customers
-                </Link>
+                </Link> */}
               </NavbarItem>
 
               <NavbarItem>
-                <Link color="foreground" href="#">
+                {/* <Link color="foreground" href="#">
                   Integrations
-                </Link>
+                </Link> */}
               </NavbarItem>
             </NavbarContent>
             <div className="mx-auto flex  items-center justify-end p-6 lg:px-8">
               <NavbarContent as="div" className="flex items-center justify-end">
+                <Button isIconOnly color="success" aria-label="Like">
+                  <IoMdPersonAdd size={20} color={COLORS.swatch_2} />
+                </Button>
                 <Input
                   classNames={{
                     base: "max-w-full sm:max-w-[10rem] h-10",
@@ -175,8 +177,8 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
               </NavbarContent>
             </div>
           </Navbar>
-          {children}
         </div>
+        {children}
       </div>
     </div>
     // </div>
