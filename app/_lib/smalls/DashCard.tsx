@@ -4,9 +4,7 @@ import {
   CardBody,
   CardFooter,
   Divider,
-  Link,
   Button,
-  Image,
   Chip,
 } from "@nextui-org/react";
 import React from "react";

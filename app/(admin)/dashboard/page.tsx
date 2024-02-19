@@ -1,9 +1,15 @@
 "use client";
 
 import Layout from "./../layout";
-import { useEffect, type ReactElement, useCallback, Key } from "react";
+import {
+  useEffect,
+  type ReactElement,
+  useCallback,
+  Key,
+  useState,
+} from "react";
 import { TiEyeOutline } from "react-icons/ti";
-import { MdDelete, MdDeleteOutline, MdOutlineShowChart } from "react-icons/md";
+import { MdDeleteOutline, MdOutlineShowChart } from "react-icons/md";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { PiUsersThreeFill } from "react-icons/pi";
 import {
@@ -17,11 +23,11 @@ import {
   User,
   Tooltip,
   Chip,
+  Button,
 } from "@nextui-org/react";
 
 import DashCard from "@/app/_lib/smalls/DashCard";
 import { BiEdit } from "react-icons/bi";
-import { FcDeleteColumn } from "react-icons/fc";
 
 type DashBoardProps = {
   users: Array<{
@@ -34,13 +40,21 @@ type DashBoardProps = {
     avatar: string;
     email: string;
   }>;
-  statusColorMap?: "name" | "role" | "status" | "actions";
+  statusColorMap?: { [key: string]: string };
 };
 
 const Dashboard = ({ users }: DashBoardProps): ReactElement => {
+  const [selectedKeys, setSelectedKeys]: [
+    Set<number>,
+    Dispatch<SetStateAction<Set<number>>>
+  ] = useState(new Set());
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     // You can expose any functions or logic here
-  }, []);
+
+    console.log("selectedKeys", selectedKeys);
+  }, [selectedKeys]);
 
   const testUsers = [
     {
@@ -126,7 +140,6 @@ const Dashboard = ({ users }: DashBoardProps): ReactElement => {
               {user.name}
             </User>
           );
-          break;
 
         case "action":
           return (
@@ -234,6 +247,23 @@ const Dashboard = ({ users }: DashBoardProps): ReactElement => {
               aria-label="Users Action Tables"
               selectionMode="multiple"
               className="px-8 mt-5"
+              selectedKeys={selectedKeys}
+              onSelectionChange={setSelectedKeys}
+              isHeaderSticky
+              bottomContent={
+                <div className="flex w-full justify-center">
+                  <Button
+                    // isDisabled={list.isLoading}
+                    variant="flat"
+                    onPress={() => {
+                      // loadMoreFunction
+                    }}
+                  >
+                    {/* {list.isLoading && <Spinner color="white" size="sm" />} */}
+                    Load More
+                  </Button>
+                </div>
+              }
             >
               <TableHeader columns={columns}>
                 {(column) => (
