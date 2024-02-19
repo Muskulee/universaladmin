@@ -3,7 +3,7 @@
 import Layout from "./../layout";
 import { useEffect, type ReactElement, useCallback, Key } from "react";
 import { TiEyeOutline } from "react-icons/ti";
-import { MdOutlineShowChart } from "react-icons/md";
+import { MdDelete, MdDeleteOutline, MdOutlineShowChart } from "react-icons/md";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { PiUsersThreeFill } from "react-icons/pi";
 import {
@@ -143,7 +143,7 @@ const Dashboard = ({ users }: DashBoardProps): ReactElement => {
               </Tooltip>
               <Tooltip color="danger" content="Delete user">
                 <span className="text-lg text-danger cursor-pointer active:opacity-50">
-                  <FcDeleteColumn />
+                  <MdDeleteOutline />
                 </span>
               </Tooltip>
             </div>
@@ -163,7 +163,6 @@ const Dashboard = ({ users }: DashBoardProps): ReactElement => {
 
         default:
           return cellValue;
-          break;
       }
     },
     []
@@ -231,7 +230,11 @@ const Dashboard = ({ users }: DashBoardProps): ReactElement => {
 
         <div className="lg:flex">
           <div className="lg:w-2/3 lg:pr-4">
-            <Table aria-label="Users Action Tables" className="px-8 mt-5">
+            <Table
+              aria-label="Users Action Tables"
+              selectionMode="multiple"
+              className="px-8 mt-5"
+            >
               <TableHeader columns={columns}>
                 {(column) => (
                   <TableColumn
