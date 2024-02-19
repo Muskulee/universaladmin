@@ -16,6 +16,7 @@ import {
   getKeyValue,
   User,
   Tooltip,
+  Chip,
 } from "@nextui-org/react";
 
 import DashCard from "@/app/_lib/smalls/DashCard";
@@ -33,7 +34,7 @@ type DashBoardProps = {
     avatar: string;
     email: string;
   }>;
-  columnKey?: "name" | "role" | "status" | "actions";
+  statusColorMap?: "name" | "role" | "status" | "actions";
 };
 
 const Dashboard = ({ users }: DashBoardProps): ReactElement => {
@@ -108,6 +109,12 @@ const Dashboard = ({ users }: DashBoardProps): ReactElement => {
       columnkey: Key
     ) => {
       const cellValue = user[columnkey];
+
+      const statusColorMap = {
+        active: "success",
+        paused: "danger",
+        vacation: "warning",
+      };
       switch (columnkey) {
         case "name":
           return (
@@ -140,6 +147,18 @@ const Dashboard = ({ users }: DashBoardProps): ReactElement => {
                 </span>
               </Tooltip>
             </div>
+          );
+
+        case "status":
+          return (
+            <Chip
+              className="capitalize"
+              color={statusColorMap[user?.status]}
+              size="sm"
+              variant="flat"
+            >
+              {cellValue}
+            </Chip>
           );
 
         default:
@@ -215,14 +234,18 @@ const Dashboard = ({ users }: DashBoardProps): ReactElement => {
             <Table aria-label="Users Action Tables" className="px-8 mt-5">
               <TableHeader columns={columns}>
                 {(column) => (
-                  <TableColumn key={column.key}>{column.label}</TableColumn>
+                  <TableColumn
+                    key={column.key}
+                    align={column.key === "action" ? "center" : "start"}
+                  >
+                    {column.label}
+                  </TableColumn>
                 )}
               </TableHeader>
               <TableBody items={testUsers}>
                 {(item) => (
                   <TableRow key={item.id}>
                     {(columnKey: Key) => (
-                      // <TableCell>{getKeyValue(item, columnKey)}</TableCell>
                       <TableCell>{renderCell(item, columnKey)}</TableCell>
                     )}
                   </TableRow>
