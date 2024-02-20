@@ -46,9 +46,6 @@ export default function MyNavbar({ closed, setLogOut, logo }: Props) {
       <nav className="bg-white dark:bg-darkblack-500 ">
         <div className="flex justify-center mt-2 ">{logo}</div>
 
-
-
-
         <ListboxWrapper>
           <Listbox
             aria-label="Actions"
