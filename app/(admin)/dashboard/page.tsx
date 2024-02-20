@@ -57,6 +57,10 @@ const Dashboard = ({ users, transactions }: DashBoardProps): ReactElement => {
     Set<number>,
     Dispatch<SetStateAction<Set<number>>>
   ] = useState(new Set());
+  const [selectedTransactions, setSelectedTransactions]: [
+    Set<number>,
+    Dispatch<SetStateAction<Set<number>>>
+  ] = useState(new Set());
   const [page, setPage] = useState(1);
   const rowsPerPage = 4;
 
@@ -73,7 +77,8 @@ const Dashboard = ({ users, transactions }: DashBoardProps): ReactElement => {
     // Rewrite logic
 
     console.log("selectedKeys", selectedKeys);
-  }, [selectedKeys]);
+    console.log("selectedTransactions", selectedTransactions);
+  }, [selectedKeys, selectedTransactions]);
 
   const renderCell = useCallback(
     (
@@ -321,8 +326,8 @@ const Dashboard = ({ users, transactions }: DashBoardProps): ReactElement => {
               aria-label="Transactions Action Tables"
               selectionMode="multiple"
               className="px-8 lg:mt-5"
-              selectedKeys={selectedKeys}
-              onSelectionChange={setSelectedKeys}
+              selectedKeys={selectedTransactions}
+              onSelectionChange={setSelectedTransactions}
               isHeaderSticky
               bottomContent={
                 <div className="flex w-full justify-center">
