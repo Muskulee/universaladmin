@@ -231,7 +231,7 @@ const Dashboard = ({ users, transactions }: DashBoardProps): ReactElement => {
   return (
     <>
       <div>
-        <div className="gap-2 grid grid-cols-12 grid-rows-2 px-8 ">
+        <div className="gap-2 grid grid-cols-12 grid-rows-2">
           {/* Total Views */}
           <DashCard
             cardIcon={<TiEyeOutline size={18} />}
@@ -275,7 +275,7 @@ const Dashboard = ({ users, transactions }: DashBoardProps): ReactElement => {
             <Table
               aria-label="Users Action Tables"
               selectionMode="multiple"
-              className="px-8 mt-5"
+              className=" mt-5"
               selectedKeys={selectedKeys}
               onSelectionChange={setSelectedKeys}
               isHeaderSticky
@@ -325,7 +325,7 @@ const Dashboard = ({ users, transactions }: DashBoardProps): ReactElement => {
             <Table
               aria-label="Transactions Action Tables"
               selectionMode="multiple"
-              className="px-8 lg:mt-5"
+              className="pl-2 mt-5"
               selectedKeys={selectedTransactions}
               onSelectionChange={setSelectedTransactions}
               isHeaderSticky
