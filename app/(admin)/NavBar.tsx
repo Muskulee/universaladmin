@@ -5,6 +5,7 @@ import { Listbox, ListboxItem } from "@nextui-org/react";
 import { ListboxWrapper } from "./ListBox";
 import { BiSolidDashboard } from "react-icons/bi";
 import { RiLogoutCircleRFill } from "react-icons/ri";
+import { MdOutlineSettingsApplications } from "react-icons/md";
 
 export interface Props {
   to?: any;
@@ -45,6 +46,9 @@ export default function MyNavbar({ closed, setLogOut, logo }: Props) {
       <nav className="bg-white dark:bg-darkblack-500 ">
         <div className="flex justify-center mt-2 ">{logo}</div>
 
+
+
+
         <ListboxWrapper>
           <Listbox
             aria-label="Actions"
@@ -54,9 +58,19 @@ export default function MyNavbar({ closed, setLogOut, logo }: Props) {
             <ListboxItem
               key="new"
               href="/dashboard"
+              shouldHighlightOnFocus
               startContent={<BiSolidDashboard size={24} />}
             >
-              Players Dashboard
+              Dashboard
+            </ListboxItem>
+
+            <ListboxItem
+              key="new"
+              href="/setting"
+              shouldHighlightOnFocus
+              startContent={<MdOutlineSettingsApplications size={24} />}
+            >
+              Setting
             </ListboxItem>
 
             <ListboxItem

@@ -7,7 +7,7 @@ import MyNavbar from "./NavBar";
 import { SearchIcon } from "./SearchIcon";
 import { IoMdPersonAdd } from "react-icons/io";
 
-import { Button, ButtonGroup } from "@nextui-org/react";
+import { Button, ButtonGroup, Image } from "@nextui-org/react";
 import {
   Navbar,
   NavbarBrand,
@@ -24,7 +24,6 @@ import {
   DropdownMenu,
   Avatar,
 } from "@nextui-org/react";
-import { AcmeLogo } from "./AcmeLogo.jsx";
 import { useSelector } from "react-redux";
 
 type LayoutProps = {
@@ -80,7 +79,7 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
           <MyNavbar
             closed={closedNav}
             setLogOut={() => {}}
-            logo={<AcmeLogo />}
+            logo={<Image width={60} height={""} src="/assets/logo.png" />}
           />
         </div>
       </div>
@@ -155,20 +154,20 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
                   <DropdownMenu aria-label="Profile Actions" variant="flat">
                     <DropdownItem key="profile" className="h-14 gap-2">
                       <p className="font-semibold">Signed in as</p>
-                      <p className="font-semibold">zoey@example.com</p>
+                      <p className="font-semibold">admin@example.com</p>
                     </DropdownItem>
                     <DropdownItem key="settings">My Settings</DropdownItem>
                     <DropdownItem key="team_settings">
                       Team Settings
                     </DropdownItem>
-                    <DropdownItem key="analytics">Analytics</DropdownItem>
+                    {/* <DropdownItem key="analytics">Analytics</DropdownItem>
                     <DropdownItem key="system">System</DropdownItem>
                     <DropdownItem key="configurations">
                       Configurations
                     </DropdownItem>
                     <DropdownItem key="help_and_feedback">
                       Help & Feedback
-                    </DropdownItem>
+                    </DropdownItem> */}
                     <DropdownItem key="logout" color="danger">
                       Log Out
                     </DropdownItem>
@@ -178,7 +177,7 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
             </div>
           </Navbar>
         </div>
-        {children}
+        <div className="px-8">{children}</div>
       </div>
     </div>
     // </div>
