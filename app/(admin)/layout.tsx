@@ -122,7 +122,7 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
                 </Link> */}
               </NavbarItem>
             </NavbarContent>
-            <div className="mx-auto flex items-center justify-end p-6 lg:px-8">
+            <div className="flex items-center justify-end p-6 lg:px-8">
               <NavbarContent as="div" className="flex items-center justify-end">
                 <Button isIconOnly color="success" aria-label="Like">
                   <IoMdPersonAdd size={20} color={COLORS.swatch_2} />
