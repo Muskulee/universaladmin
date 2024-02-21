@@ -11,9 +11,9 @@ type LayoutProps = {
 const FrontLayout = ({ children }: LayoutProps) => {
   return (
     <div>
-      <GeneralNav />
+      <GeneralNav />        
 
-      <div className="px-8 mt-2">{children}</div>
+      <div className="px-8 mt-2 bg-[#F6FAFF]">{children}</div>
     </div>
   );
 };

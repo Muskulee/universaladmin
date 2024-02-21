@@ -54,7 +54,12 @@ const Contact = ({}: ContactProps) => {
       />
 
       <div className="grid grid-cols-2 grid-flow-col gap-4  ">
-        <div className="px-8 rounded-2xl justify-center items-center bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg">
+        <div className="px-8 rounded-2xl justify-center items-center bg-white text-danger shadow-lg">
+          <h2 className="mt-20 text-center text-success">
+            Let's connect: We are here to help, and we would love to hear form
+            you. Whether you have a question or just want to chat
+          </h2>
+
           <div className="mt-20 ">
             <Input
               className={inputClassName}
