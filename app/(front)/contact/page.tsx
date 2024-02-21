@@ -2,7 +2,7 @@
 
 import PageHeader from "@/app/_lib/smalls/PageHeader";
 import Layout from "./../layout";
-import { Button, Divider, Image, Input, Textarea } from "@nextui-org/react";
+import { Button, Image, Input, Textarea } from "@nextui-org/react";
 import { useMemo, useState } from "react";
 
 type ContactProps = {};
@@ -10,6 +10,7 @@ type ContactProps = {};
 const Contact = ({}: ContactProps) => {
   const [value, setValue] = useState<string>("test@gmail.com");
   const [name, setName] = useState<string>("tester");
+  const [message, setMessage] = useState<string>("");
 
   const validateEmail = (value: string) =>
     value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i);
@@ -17,9 +18,10 @@ const Contact = ({}: ContactProps) => {
   const isInvalid = useMemo(() => {
     if (value === "") return false;
     if (name === "") return false;
+    if (message === "") return false;
 
     return validateEmail(value) ? false : true;
-  }, [value]);
+  }, [value, message, name]);
 
   const inputClassName = {
     label: "text-black/50 dark:text-white/90 mt-20",
@@ -84,13 +86,15 @@ const Contact = ({}: ContactProps) => {
 
           <div className="mt-20">
             <Textarea
-              isInvalid={true}
+              isInvalid={isInvalid}
               variant="bordered"
               label="Description"
               placeholder="Enter your message"
               defaultValue="Enter your message"
               errorMessage="Cannot be empty"
               className="max-w-full"
+              value={message}
+              onValueChange={setMessage}
             />
           </div>
 
