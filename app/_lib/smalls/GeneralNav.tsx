@@ -14,7 +14,9 @@ import {
 } from "@nextui-org/react";
 import { useState } from "react";
 
-const GeneralNav = () => {
+type GeneralNavProps = {};
+
+const GeneralNav = ({}: GeneralNavProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
