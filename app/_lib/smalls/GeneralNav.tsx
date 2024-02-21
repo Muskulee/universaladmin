@@ -19,18 +19,7 @@ type GeneralNavProps = {};
 const GeneralNav = ({}: GeneralNavProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const menuItems = [
-    "About",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
+  const menuItems = ["About", "Dashboard", "Pricing", "FAQ", "Contact"];
 
   return (
     <Navbar
@@ -134,14 +123,8 @@ const GeneralNav = ({}: GeneralNavProps) => {
             <Link
               className="w-full"
               underline="active"
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              href="#"
+              color={"danger"}
+              href={`${item.toLowerCase()}`}
               size="lg"
             >
               {item}
