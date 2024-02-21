@@ -109,7 +109,7 @@ const Contact = ({}: ContactProps) => {
           <Image
             className="max-w-full max-h-screen"
             loading="lazy"
-            alt="Contact us image"
+            alt="Contact US image"
             src="https://res.cloudinary.com/ddpqusntk/image/upload/v1708494256/contactus_axawkw.jpg"
           />
         </div>
