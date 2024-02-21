@@ -2,7 +2,7 @@ import { Button } from "@nextui-org/button";
 
 import GeneralNav from "./_lib/smalls/GeneralNav";
 import { BsShareFill } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
+import { FaGithubAlt } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -24,7 +24,7 @@ const Home = () => {
             variant="solid"
             color="danger"
             size="lg"
-            endContent={<FaGithubSquare />}
+            endContent={<FaGithubAlt />}
           >
             Download
           </Button>

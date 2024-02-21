@@ -10,10 +10,6 @@ import { IoMdPersonAdd } from "react-icons/io";
 import { Button, ButtonGroup, Image } from "@nextui-org/react";
 import {
   Navbar,
-  NavbarBrand,
-  NavbarMenuToggle,
-  NavbarMenuItem,
-  NavbarMenu,
   NavbarContent,
   NavbarItem,
   Link,

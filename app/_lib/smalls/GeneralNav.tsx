@@ -77,7 +77,7 @@ const GeneralNav = () => {
             // }}
             className="hover:animate-spin"
           >
-            About
+            Home
           </Link>
         </NavbarItem>
         <NavbarItem>
