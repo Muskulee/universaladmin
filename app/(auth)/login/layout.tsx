@@ -16,28 +16,28 @@ const LoginLayout = ({ children }: LayoutProps) => {
             <header>
               <Link href="/" className="">
                 <Image
-                  src="/assets/images/logo/logo-color.svg"
-                  className="block dark:hidden"
+                  width={60}
+                  height={60}
+                  src="/assets/logo.png"
+                  className="hover:animate-spin"
                   alt="Logo"
-                  width={120} // Set the actual width here
-                  height={40} // Set the actual height here
                 />
                 <Image
-                  src="/app/assets/images/logo-color.svg"
+                  src="/assets/logo.png"
                   className="hidden dark:block"
                   alt="Logo"
-                  width={120} // Set the actual width here
-                  height={40} // Set the actual height here
+                  width={120}
+                  height={40}
                 />
               </Link>
             </header>
             <div className="max-w-[450px] m-auto pt-24 pb-16">
               <header className="text-center mb-8">
                 <h2 className="text-bgray-900 dark:text-white text-4xl font-semibold font-poppins mb-2">
-                  Sign in to Bankco.
+                  Sign in to Admin.
                 </h2>
                 <p className="font-urbanis text-base font-medium text-bgray-600 dark:text-bgray-50">
-                  Send, spend and save smarter
+                  Use, reuse and launch
                 </p>
               </header>
               {children}
@@ -48,29 +48,30 @@ const LoginLayout = ({ children }: LayoutProps) => {
           <div className="lg:w-1/2 lg:block hidden bg-[#F6FAFF] dark:bg-darkblack-600 p-20 relative">
             <ul>
               <li className="absolute top-10 left-8">
-                <img src="/assets/images/shapes/square.svg" alt="" />
+                <img src="/assets/images/square.svg" alt="" />
               </li>
               <li className="absolute right-12 top-14">
-                <img src="/assets/images/shapes/vline.svg" alt="" />
+                <img src="/assets/images/vline.svg" alt="" />
               </li>
               <li className="absolute bottom-7 left-8">
-                <img src="/assets/images/shapes/dotted.svg" alt="" />
+                <img src="/assets/images/dotted.svg" alt="" />
               </li>
             </ul>
             <div className="">
-              <img src="/assets/images/illustration/signin.svg" alt="" />
+              <img src="/assets/images/signin.svg" alt="" />
             </div>
             <div>
               <div className="text-center max-w-lg px-1.5 m-auto">
                 <h3 className="text-bgray-900 dark:text-white font-semibold font-popins text-4xl mb-4">
-                  Speady, Easy and Fast
+                  Speedy, Easy and Fast
                 </h3>
                 <p className="text-bgray-600 dark:text-bgray-50 text-sm font-medium">
-                  BankCo. help you set saving goals, earn cash back offers, Go
-                  to disclaimer for more details and get paychecks up to two
-                  days early. Get a
-                  <span className="text-success-300 font-bold">$20</span> bonus
-                  when you receive qualifying direct deposits
+                  Admin. helps you start your app, quickly,
+                  <span className="text-success-300 font-bold">
+                    {" "}
+                    Free.
+                  </span>{" "}
+                  Download now!
                 </p>
               </div>
             </div>
