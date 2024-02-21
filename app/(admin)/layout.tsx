@@ -152,8 +152,10 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
                       <p className="font-semibold">Signed in as</p>
                       <p className="font-semibold">admin@example.com</p>
                     </DropdownItem>
-                    <DropdownItem key="settings">My Settings</DropdownItem>
-                    <DropdownItem key="team_settings">
+                    <DropdownItem key="settings" href="/setting">
+                      My Settings
+                    </DropdownItem>
+                    <DropdownItem key="team_settings" href="/setting">
                       Team Settings
                     </DropdownItem>
                     {/* <DropdownItem key="analytics">Analytics</DropdownItem>
@@ -164,7 +166,7 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
                     <DropdownItem key="help_and_feedback">
                       Help & Feedback
                     </DropdownItem> */}
-                    <DropdownItem key="logout" color="danger">
+                    <DropdownItem key="logout" color="danger" href="login">
                       Log Out
                     </DropdownItem>
                   </DropdownMenu>
