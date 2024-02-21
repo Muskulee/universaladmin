@@ -137,7 +137,7 @@ const Login = () => {
           <a
             href="#"
             data-target="#multi-step-modal"
-            className="modal-open text-success-300 font-semibold text-base underline"
+            className="modal-open text-danger-500 font-semibold text-base underline"
           >
             Forgot Password?
           </a>
@@ -146,7 +146,7 @@ const Login = () => {
       <button
         onClick={handleLogin}
         // href="/login"
-        className="py-3.5 flex items-center justify-center text-white font-bold bg-success-300 hover:bg-success-400 transition-all rounded-lg w-full"
+        className="py-3.5 flex items-center justify-center text-white font-bold bg-danger-300 hover:bg-danger-400 transition-all rounded-lg w-full"
       >
         Sign In
       </button>

@@ -47,18 +47,18 @@ const LoginLayout = ({ children }: LayoutProps) => {
           {/* <!-- Right --> */}
           <div className="lg:w-1/2 lg:block hidden bg-[#F6FAFF] dark:bg-darkblack-600 p-20 relative">
             <ul>
-              <li className="absolute top-10 left-8">
+              {/* <li className="absolute top-10 left-8">
                 <img src="/assets/images/square.svg" alt="" />
-              </li>
-              <li className="absolute right-12 top-14">
+              </li> */}
+              {/* <li className="absolute right-12 top-14">
                 <img src="/assets/images/vline.svg" alt="" />
-              </li>
-              <li className="absolute bottom-7 left-8">
+              </li> */}
+              {/* <li className="absolute bottom-7 left-8">
                 <img src="/assets/images/dotted.svg" alt="" />
-              </li>
+              </li> */}
             </ul>
             <div className="">
-              <img src="/assets/images/signin.svg" alt="" />
+              <img src="/assets/images/login.svg" alt="" />
             </div>
             <div>
               <div className="text-center max-w-lg px-1.5 m-auto">
@@ -67,10 +67,7 @@ const LoginLayout = ({ children }: LayoutProps) => {
                 </h3>
                 <p className="text-bgray-600 dark:text-bgray-50 text-sm font-medium">
                   Admin. helps you start your app, quickly,
-                  <span className="text-success-300 font-bold">
-                    {" "}
-                    Free.
-                  </span>{" "}
+                  <span className="text-danger-300 font-bold"> Free.</span>{" "}
                   Download now!
                 </p>
               </div>
