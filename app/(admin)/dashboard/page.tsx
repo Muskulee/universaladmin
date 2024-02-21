@@ -48,7 +48,7 @@ type DashBoardProps = {
     avatar: string;
     email: string;
   }>;
-  transactions: Array;
+  transactions: Array<string>;
   statusColorMap?: { [key: string]: string };
 };
 

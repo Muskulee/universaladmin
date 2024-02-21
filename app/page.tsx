@@ -11,6 +11,8 @@ const Home = () => {
         <GeneralNav />
       </main>
 
+      {/* <div className="flex flex-col items-center justify-center bg-gradient-to-r from-pink-500 to-yellow-500 text-white shadow-lg h-screen text-black bg-blend-multiply"> */}
+
       <div className="flex flex-col items-center justify-center bg-gradient-to-r from-gray-300 to-white h-screen text-black bg-blend-multiply">
         <h1 className="text-6xl font-bold text-center mb-8">
           React and NextJS Admin Template
