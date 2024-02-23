@@ -27,6 +27,11 @@ const Setting = ({}: SettingProps) => {
       icon: <CgWebsite />,
     },
     {
+      title: "Branding",
+      key: "Branding",
+      icon: <CgDesignmodo />,
+    },
+    {
       title: "Payment",
       key: "Payment",
       icon: <MdPayment />,
@@ -36,21 +41,17 @@ const Setting = ({}: SettingProps) => {
       key: "Email",
       icon: <MdEmail />,
     },
-    {
-      title: "Storage",
-      key: "Storage",
-      icon: <MdSdStorage />,
-    },
-    {
-      title: "Branding",
-      key: "Branding",
-      icon: <CgDesignmodo />,
-    },
-    {
-      title: "Bill",
-      key: "Bill",
-      icon: <FaMoneyBillTrendUp />,
-    },
+    // {
+    //   title: "Storage",
+    //   key: "Storage",
+    //   icon: <MdSdStorage />,
+    // },
+
+    // {
+    //   title: "Bill",
+    //   key: "Bill",
+    //   icon: <FaMoneyBillTrendUp />,
+    // },
   ];
 
   useMemo(() => {
@@ -71,13 +72,13 @@ const Setting = ({}: SettingProps) => {
         setContent(<EmailSettings />);
         break;
 
-      case "Storage":
-        setContent(<StorageSettings />);
-        break;
+      // case "Storage":
+      //   setContent(<StorageSettings />);
+      //   break;
 
-      case "Bill":
-        setContent(<BillSettings />);
-        break;
+      // case "Bill":
+      //   setContent(<BillSettings />);
+      //   break;
 
       default:
         setContent(<div>"Whatever Settings Component Goes Here!"</div>);
