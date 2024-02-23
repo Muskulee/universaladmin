@@ -53,7 +53,7 @@ export default function MyNavbar({ closed, setLogOut, logo }: Props) {
             color="danger"
           >
             <ListboxItem
-              key="new"
+              key="dashboard"
               href="/dashboard"
               shouldHighlightOnFocus
               startContent={<BiSolidDashboard size={24} />}
@@ -62,7 +62,7 @@ export default function MyNavbar({ closed, setLogOut, logo }: Props) {
             </ListboxItem>
 
             <ListboxItem
-              key="new"
+              key="setting"
               href="/setting"
               shouldHighlightOnFocus
               startContent={<MdOutlineSettingsApplications size={24} />}

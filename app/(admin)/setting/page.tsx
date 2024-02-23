@@ -54,7 +54,6 @@ const Setting = ({}: SettingProps) => {
   ];
 
   useMemo(() => {
-    console.log("item", item);
     switch (item) {
       case "General":
         setContent(<GeneralSettings />);
