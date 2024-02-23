@@ -59,6 +59,10 @@ const Setting = ({}: SettingProps) => {
         setContent(<GeneralSettings />);
         break;
 
+      case "Branding":
+        setContent(<BrandSettings />);
+        break;
+
       case "Payment":
         setContent(<PaymentSettings />);
         break;
@@ -69,10 +73,6 @@ const Setting = ({}: SettingProps) => {
 
       case "Storage":
         setContent(<StorageSettings />);
-        break;
-
-      case "Branding":
-        setContent(<BrandSettings />);
         break;
 
       case "Bill":

@@ -1,7 +1,5 @@
 import { Button, Input } from "@nextui-org/react";
 import { BiMailSend } from "react-icons/bi";
-import { CgWebsite } from "react-icons/cg";
-import { FaInternetExplorer } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
 
 const GeneralSettings = () => {
