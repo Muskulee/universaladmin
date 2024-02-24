@@ -1,8 +1,6 @@
-import { Input, Checkbox } from "@nextui-org/react";
+import { Input } from "@nextui-org/react";
 import React from "react";
-import { BsHeartFill, BsPlus } from "react-icons/bs";
 import { CgKey } from "react-icons/cg";
-import { HiIdentification } from "react-icons/hi";
 
 const StripeComponent = () => {
   const [isSelected, setIsSelected] = React.useState(false);

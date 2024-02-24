@@ -22,7 +22,7 @@ const PaymentSettings = () => {
       component: <StripeComponent />,
     },
     {
-      title: "Manual",
+      title: "Bank Transfer",
       icon: <GrManual size={50} />,
       component: <ManualComponent />,
     },
