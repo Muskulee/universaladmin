@@ -52,7 +52,7 @@ type DashBoardProps = {
   statusColorMap?: { [key: string]: string };
 };
 
-const Dashboard = ({ users, transactions }: DashBoardProps): ReactElement => {
+const Dashboard = (props: DashBoardProps): ReactElement => {
   const [selectedKeys, setSelectedKeys]: [
     Set<number>,
     Dispatch<SetStateAction<Set<number>>>
