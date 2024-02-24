@@ -20,6 +20,8 @@ type SettingProps = {
 const Setting = ({}: SettingProps) => {
   const [item, setItem] = useState<string>("General");
   const [content, setContent] = useState<ReactElement>(<></>);
+
+  const defaultC = "Whatever Settings Component Goes Here!";
   const SettingTabs = [
     {
       title: "General",
@@ -81,7 +83,7 @@ const Setting = ({}: SettingProps) => {
       //   break;
 
       default:
-        setContent(<div>Whatever Settings Component Goes Here!</div>);
+        setContent(<div>{defaultC}</div>);
         break;
     }
   }, [item]);
