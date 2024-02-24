@@ -81,7 +81,7 @@ const Setting = ({}: SettingProps) => {
       //   break;
 
       default:
-        setContent(<div>"Whatever Settings Component Goes Here!"</div>);
+        setContent(<div>Whatever Settings Component Goes Here!</div>);
         break;
     }
   }, [item]);

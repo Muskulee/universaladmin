@@ -18,7 +18,7 @@ const Home = () => {
           React and NextJS Admin Template
         </h1>
         <p className="mb-6 px-20 text-3xl font-bold leading-snug text-danger sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
-          Use. Reuse. Launch
+          Edit. Reuse. Launch
         </p>
 
         <div className="flex gap-4 items-center">

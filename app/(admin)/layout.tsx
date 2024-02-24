@@ -60,19 +60,6 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
 
   const getNavWidth = () => (closedNav ? "w-16" : "w-56");
 
-  const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
-  ];
-
   return (
     <>
       <div className="flex bg-white dark:bg-darkblack-500">
