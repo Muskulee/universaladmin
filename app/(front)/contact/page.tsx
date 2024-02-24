@@ -57,7 +57,7 @@ const Contact = ({}: ContactProps) => {
         <div className="px-8 rounded-2xl justify-center items-center bg-white text-danger shadow-lg">
           <h2 className="mt-20 text-center text-success">
             {
-              "Let's connect: We are here to help, and we would love to hear form you. Whether you have a question or just want to chat"
+              "Lets connect: We are here to help, and we would love to hear form you. Whether you have a question or just want to chat"
             }
           </h2>
 

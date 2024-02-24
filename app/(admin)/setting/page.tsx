@@ -74,14 +74,6 @@ const Setting = ({}: SettingProps) => {
         setContent(<EmailSettings />);
         break;
 
-      // case "Storage":
-      //   setContent(<StorageSettings />);
-      //   break;
-
-      // case "Bill":
-      //   setContent(<BillSettings />);
-      //   break;
-
       default:
         setContent(<div>{defaultC}</div>);
         break;
