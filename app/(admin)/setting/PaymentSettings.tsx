@@ -1,21 +1,30 @@
 import { Accordion, AccordionItem, Avatar, Switch } from "@nextui-org/react";
 import { BiAnchor, BiDownArrow, BiUpArrow, BiUpvote } from "react-icons/bi";
 import { BsMoonFill, BsPaypal } from "react-icons/bs";
-import { FaStripe } from "react-icons/fa6";
+import { FaStripe, FaStripeS } from "react-icons/fa6";
 import { FiSun } from "react-icons/fi";
 import { PiStripeLogo } from "react-icons/pi";
+import PayPalComponent from "./PayPalComponent";
+import StripeComponent from "./StripeComponent";
+import { GrManual } from "react-icons/gr";
+import ManualComponent from "./ManualComponent";
 
 const PaymentSettings = () => {
   const PaymentMethods = [
     {
       title: "Paypal",
       icon: <BsPaypal size={50} />,
-      component: <></>,
+      component: <PayPalComponent />,
     },
     {
       title: "Stripe",
       icon: <PiStripeLogo size={50} />,
-      component: <></>,
+      component: <StripeComponent />,
+    },
+    {
+      title: "Manual",
+      icon: <GrManual size={50} />,
+      component: <ManualComponent />,
     },
   ];
 
