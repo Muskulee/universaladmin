@@ -21,7 +21,7 @@ const Setting = ({}: SettingProps) => {
   const [item, setItem] = useState<string>("General");
   const [content, setContent] = useState<ReactElement>(<></>);
 
-  const defaultC = "Whatever Settings Component Goes Here!";
+  const defaultC = `Whatever Settings Component Goes Here!`;
   const SettingTabs = [
     {
       title: "General",
