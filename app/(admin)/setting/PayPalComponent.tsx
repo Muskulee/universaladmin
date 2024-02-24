@@ -1,16 +1,15 @@
 import { Input, Checkbox } from "@nextui-org/react";
 import React from "react";
-import { BiMailSend } from "react-icons/bi";
 import { BsHeartFill, BsPlus } from "react-icons/bs";
 import { CgKey } from "react-icons/cg";
 import { HiIdentification } from "react-icons/hi";
-import { TbWorldWww } from "react-icons/tb";
 
 const PayPalComponent = () => {
   const [isSelected, setIsSelected] = React.useState(false);
 
   return (
     <div>
+      <div className="flex mt-5">Paypal Mode</div>
       <div className="flex gap-4 mt-10 mb-10">
         <Checkbox
           defaultSelected
