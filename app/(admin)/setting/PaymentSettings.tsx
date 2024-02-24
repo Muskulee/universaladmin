@@ -1,8 +1,6 @@
 import { Accordion, AccordionItem, Avatar, Switch } from "@nextui-org/react";
-import { BiAnchor, BiDownArrow, BiUpArrow, BiUpvote } from "react-icons/bi";
-import { BsMoonFill, BsPaypal } from "react-icons/bs";
-import { FaStripe, FaStripeS } from "react-icons/fa6";
-import { FiSun } from "react-icons/fi";
+import {  BiDownArrow, BiUpArrow } from "react-icons/bi";
+import {  BsPaypal } from "react-icons/bs";
 import { PiStripeLogo } from "react-icons/pi";
 import PayPalComponent from "./PayPalComponent";
 import StripeComponent from "./StripeComponent";
@@ -41,11 +39,7 @@ const PaymentSettings = () => {
             startContent={<Avatar isBordered radius="sm" icon={method.icon} />}
             subtitle={
               <p className="flex">
-                <Switch
-                  defaultSelected
-                  aria-label={method.title}
-                  color="danger"
-                />
+                <Switch aria-label={method.title} color="danger" />
               </p>
             }
             title={method.title}
