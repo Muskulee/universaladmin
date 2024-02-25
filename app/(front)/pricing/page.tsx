@@ -17,16 +17,17 @@ import PageHeader from "@/app/_lib/smalls/PageHeader";
 import { TbPackage } from "react-icons/tb";
 import { BiCheckCircle } from "react-icons/bi";
 
-type Plan = {
-  planTitle: string;
-  id: number;
-  subtitle: string;
-  recommended: boolean;
-  benefits: string[];
-};
+// type Plan = {
+//   planTitle: string;
+//   id: number;
+//   subtitle: string;
+//   recommended: boolean;
+//   benefits: string[];
+// };
 
-const Pricing = ({}: Plan) => {
-  const plans: Plan[] = [
+// const Pricing = ({}: Plan) => {
+const Pricing = () => {
+  const plans = [
     {
       id: 1,
       planTitle: "First Tier",

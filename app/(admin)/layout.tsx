@@ -74,7 +74,14 @@ const DashBoardLayout = ({ children }: LayoutProps) => {
             <MyNavbar
               closed={closedNav}
               setLogOut={() => {}}
-              logo={<Image width={60} height={""} src="/assets/logo.png" />}
+              logo={
+                <Image
+                  width={60}
+                  height={""}
+                  src="/assets/logo.png"
+                  alt="Logo"
+                />
+              }
             />
           </div>
         </div>

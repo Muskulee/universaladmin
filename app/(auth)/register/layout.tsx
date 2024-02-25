@@ -49,7 +49,7 @@ const SigupLayout = ({ children }: LayoutProps) => {
               </li> */}
             </ul>
             <div className="mb-10">
-              <img src="assets/images/register.svg" alt="" />
+              <Image src="assets/images/register.svg" alt="Register Image" />
             </div>
             <div>
               <div className="text-center max-w-lg px-1.5 m-auto">

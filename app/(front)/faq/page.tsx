@@ -5,10 +5,6 @@ import Layout from "./../layout";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { useEffect, useState } from "react";
 
-type FAQprops = {
-  faqs: Array<string>;
-};
-
 const getRandomFAQ = () => {
   const faqCount = Math.floor(Math.random() * 10) + 1; // Generate between 1 and 5 FAQs
   const faqs = [];
@@ -20,7 +16,7 @@ const getRandomFAQ = () => {
   return faqs;
 };
 
-const FAQ = ({}: FAQprops) => {
+const FAQ = () => {
   const [faqs, setFAQs] = useState<string[]>([]);
   const itemClasses = {
     base: "py-0 w-full",

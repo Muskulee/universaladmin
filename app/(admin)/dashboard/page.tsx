@@ -37,30 +37,11 @@ import {
   columns,
 } from "./../../_lib/api/fakeData";
 
-type DashBoardProps = {
-  users: Array<{
-    id: number;
-    name: string;
-    role: string;
-    team: string;
-    status: string;
-    age: string;
-    avatar: string;
-    email: string;
-  }>;
-  transactions: Array<string>;
-  statusColorMap?: { [key: string]: string };
-};
 
-const Dashboard = (props: DashBoardProps): ReactElement => {
-  const [selectedKeys, setSelectedKeys]: [
-    Set<number>,
-    Dispatch<SetStateAction<Set<number>>>
-  ] = useState(new Set());
-  const [selectedTransactions, setSelectedTransactions]: [
-    Set<number>,
-    Dispatch<SetStateAction<Set<number>>>
-  ] = useState(new Set());
+
+const Dashboard = () => {
+  const [selectedKeys, setSelectedKeys] = useState(new Set());
+  const [selectedTransactions, setSelectedTransactions] = useState(new Set());
   const [page, setPage] = useState(1);
   const rowsPerPage = 4;
 
@@ -71,7 +52,7 @@ const Dashboard = (props: DashBoardProps): ReactElement => {
     const end = start + rowsPerPage;
 
     return testTransactions.slice(start, end);
-  }, [page, testTransactions]);
+  }, [page]);
 
   useEffect(() => {
     // Rewrite logic

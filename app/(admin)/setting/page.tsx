@@ -4,20 +4,17 @@ import { ReactElement, useMemo, useState } from "react";
 import Layout from "./../layout";
 import { Card, CardBody, Chip, Tab, Tabs } from "@nextui-org/react";
 import { CgDesignmodo, CgWebsite } from "react-icons/cg";
-import { MdEmail, MdPayment, MdSdStorage } from "react-icons/md";
+import { MdEmail, MdPayment } from "react-icons/md";
 import GeneralSettings from "./GeneralSettings";
 import PaymentSettings from "./PaymentSettings";
 import EmailSettings from "./EmailSettings";
-import StorageSettings from "./StorageSettings";
 import BrandSettings from "./BrandSettings";
-import BillSettings from "./BillSettings";
-import { FaMoneyBillTrendUp } from "react-icons/fa6";
 
-type SettingProps = {
-  SettingTabs: Array<string>;
-};
+// type SettingProps = {
+//   SettingTabs: Array<string>;
+// };
 
-const Setting = ({}: SettingProps) => {
+const Setting = () => {
   const [item, setItem] = useState<string>("General");
   const [content, setContent] = useState<ReactElement>(<></>);
 
@@ -78,7 +75,7 @@ const Setting = ({}: SettingProps) => {
         setContent(<div>{defaultC}</div>);
         break;
     }
-  }, [item]);
+  }, [item, defaultC]);
 
   return (
     <>

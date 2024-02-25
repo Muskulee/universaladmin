@@ -58,7 +58,7 @@ const LoginLayout = ({ children }: LayoutProps) => {
               </li> */}
             </ul>
             <div className="">
-              <img src="/assets/images/login.svg" alt="" />
+              <Image src="/assets/images/login.svg" alt="Login Image" />
             </div>
             <div>
               <div className="text-center max-w-lg px-1.5 m-auto">

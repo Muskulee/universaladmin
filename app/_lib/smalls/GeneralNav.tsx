@@ -55,6 +55,7 @@ const GeneralNav = ({}: GeneralNavProps) => {
             height={""}
             src="/assets/logo.png"
             className="hover:animate-spin"
+            alt="Website Logo"
           />
           {/* <p className="font-bold text-inherit">Admin</p> */}
         </NavbarBrand>
