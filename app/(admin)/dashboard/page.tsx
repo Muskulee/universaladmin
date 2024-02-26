@@ -37,12 +37,39 @@ import {
   columns,
 } from "./../../_lib/api/fakeData";
 
+// Define interface for a user
+interface User {
+  name?: string;
+  role?: string;
+  avatar?: string;
+  team?: string;
+  status?: string;
+  action?: string;
+  email?: string;
+  [key: string]: string | undefined; // Index signature
+}
 
+// Define interface for transaction
+interface Transaction {
+  name?: string;
+  role?: string;
+  avatar?: string;
+  team?: string;
+  status?: string;
+  action?: string;
+  email?: string;
+  [key: string]: string | undefined;
+}
 
-const Dashboard = () => {
-  const [selectedKeys, setSelectedKeys] = useState(new Set());
-  const [selectedTransactions, setSelectedTransactions] = useState(new Set());
-  const [page, setPage] = useState(1);
+// Define interface for props
+interface DashboardProps {}
+
+const Dashboard: React.FC<DashboardProps> = () => {
+  const [selectedKeys, setSelectedKeys] = useState<Set<Key>>(new Set());
+  const [selectedTransactions, setSelectedTransactions] = useState<Set<Key>>(
+    new Set()
+  );
+  const [page, setPage] = useState<number>(1);
   const rowsPerPage = 4;
 
   const pages = Math.ceil(testTransactions.length / rowsPerPage);
@@ -61,77 +88,66 @@ const Dashboard = () => {
     console.log("selectedTransactions", selectedTransactions);
   }, [selectedKeys, selectedTransactions]);
 
-  const renderCell = useCallback(
-    (
-      user: {
-        name?: string;
-        role?: string;
-        avatar?: string;
-        team?: string;
-        status?: string;
-        action?: string;
-        email?: string;
-      },
-      columnkey: Key
-    ) => {
-      const cellValue = user[columnkey];
+  const renderCell = useCallback((user: User, columnkey: string) => {
+    const cellValue = user[columnkey];
 
-      const statusColorMap = {
-        active: "success",
-        paused: "danger",
-        vacation: "warning",
-      };
-      switch (columnkey) {
-        case "name":
-          return (
-            <User
-              avatarProps={{ radius: "lg", src: user.avatar }}
-              description={user.email}
-              name={cellValue}
-            >
-              {user.name}
-            </User>
-          );
+    const statusColorMap: Record<string, "success" | "danger" | "warning"> = {
+      active: "success",
+      paused: "danger",
+      vacation: "warning",
+    };
 
-        case "action":
-          return (
-            <div className="relative flex items-center gap-2">
-              <Tooltip content="Details">
-                <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-                  <TiEyeOutline />
-                </span>
-              </Tooltip>
-              <Tooltip content="Edit user">
-                <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
-                  <BiEdit />
-                </span>
-              </Tooltip>
-              <Tooltip color="danger" content="Delete user">
-                <span className="text-lg text-danger cursor-pointer active:opacity-50">
-                  <MdDeleteOutline />
-                </span>
-              </Tooltip>
-            </div>
-          );
+    switch (columnkey) {
+      case "name":
+        return (
+          <User
+            avatarProps={{ radius: "lg", src: user.avatar }}
+            description={user.email}
+            name={cellValue}
+          >
+            {user.name}
+          </User>
+        );
 
-        case "status":
-          return (
-            <Chip
-              className="capitalize"
-              color={statusColorMap[user?.status]}
-              size="sm"
-              variant="flat"
-            >
-              {cellValue}
-            </Chip>
-          );
+      case "action":
+        return (
+          <div className="relative flex items-center gap-2">
+            <Tooltip content="Details">
+              <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
+                <TiEyeOutline />
+              </span>
+            </Tooltip>
+            <Tooltip content="Edit user">
+              <span className="text-lg text-default-400 cursor-pointer active:opacity-50">
+                <BiEdit />
+              </span>
+            </Tooltip>
+            <Tooltip color="danger" content="Delete user">
+              <span className="text-lg text-danger cursor-pointer active:opacity-50">
+                <MdDeleteOutline />
+              </span>
+            </Tooltip>
+          </div>
+        );
 
-        default:
-          return cellValue;
-      }
-    },
-    []
-  );
+      case "status":
+        const statusColor = statusColorMap[user?.status || ""] || "default";
+        return (
+          <Chip
+            className="capitalize"
+            color={statusColor}
+            size="sm"
+            variant="flat"
+          >
+            {cellValue}
+          </Chip>
+        );
+
+      default:
+        return cellValue;
+    }
+  }, []);
+
   const renderTransaction = useCallback(
     (
       transaction: {
@@ -142,8 +158,9 @@ const Dashboard = () => {
         status?: string;
         action?: string;
         email?: string;
+        [key: string]: string | undefined;
       },
-      columnkey: Key
+      columnkey: string
     ) => {
       const cellValue = transaction[columnkey];
 
@@ -257,7 +274,7 @@ const Dashboard = () => {
               aria-label="Users Action Tables"
               selectionMode="multiple"
               className=" mt-5"
-              selectedKeys={selectedKeys}
+              selectedKeys={selectedKeys as Set<React.Key>}
               onSelectionChange={setSelectedKeys}
               isHeaderSticky
               bottomContent={
